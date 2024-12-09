@@ -13,7 +13,7 @@ def start(update: Update, context: CallbackContext) -> None:
     update.message.reply_text('Hello! Press the button below:', reply_markup=reply_markup)
 
 def main() -> None:
-    updater = Updater(TOKEN)
+    updater = Updater(token=TOKEN, use_context=True)
     dispatcher = updater.dispatcher
     dispatcher.add_handler(CommandHandler("start", start))
     updater.start_polling()
